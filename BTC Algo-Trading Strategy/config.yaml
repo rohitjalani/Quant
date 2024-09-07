@@ -1,0 +1,112 @@
+---
+data:
+  path: "./data"
+  files:
+    3m: btcusdt_3m.csv
+    1d: btcusdt_1d.csv
+    1w: btcusdt_1w.csv
+  samples:
+    out_sample:
+      start_date: '2022-01-13'
+      end_date: '2023-11-30'
+    in_sample:
+      start_date: '2018-01-01'
+      end_date: '2022-01-12'
+    full_sample:
+      start_date: '2018-01-01'
+      end_date: '2023-11-30'
+strategies:
+  strat_cheby:
+    butterworth:
+      order: 3
+      cutoff_frequency: 0.3
+    chebyshev:
+      order: 5
+      cutoff_frequency: 0.9
+      ripple_factor: 0.01
+    crossover:
+      type: long_short # long_short, short
+      long_short:
+        k_guppyshort_entry: 0
+        k_guppylong_entry: 0
+      short:
+        k_guppy_entry: 0
+    skip_trade:
+      active: true
+      duration: 15
+      num_trades: 5
+      pct: 0.15
+  strat_gmma:
+    gmma_short:
+    - 3
+    - 5
+    - 8
+    - 10
+    - 12
+    - 15
+    gmma_long:
+    - 30
+    - 35
+    - 40
+    - 45
+    - 50
+    - 60
+    crossover:
+      type: long_short # long_short, short
+      long_short:
+        k_guppyshort_entry: 0
+        k_guppylong_entry: 0
+        k_guppyshort_exit: 0
+        k_guppylong_exit: 0
+      short:
+        k_guppy_entry: 0
+        k_guppy_exit: 0
+utils:
+  sample: in_sample # in_sample, out_sample, full_sample
+  timeframes:
+    strat_cheby: 1d
+    strat_gmma_1: 1w
+    strat_gmma_2: 1d
+    granularise: 3m
+  stop_loss: true
+  take_profit: true
+  trade_on: close # open, close
+  prc_consolidating_window: 96000
+  prc_multiplier: 0.6
+  dont_take_next_cheby_trade: false
+stop_loss:
+  strat_cheby:
+    type: simple # trailing, simple, null
+    limit: 0.1
+    retrade: false
+    retrade_frequency: 1d
+  strat_gmma:
+    type: trailing # trailing, simple, null
+    limit: 0.1
+    retrade: true
+    retrade_frequency: 1d
+  retrade_after: 0
+take_profit:
+  strat_cheby:
+    active: true
+    limit: 0.25
+  strat_gmma:
+    active: false
+    limit: 0.25
+backtester:
+  capital: 100
+  transaction_cost: 0.001
+  print_statistics: true
+  compounding: true
+  plots:
+    active: true
+    plot: false
+    save: true
+    drawdown: true
+    entry_exit:
+      candles: false
+      line: true
+    returns: true
+    holding_duration: true
+    sharpe: true
+    portfolio_value: true
