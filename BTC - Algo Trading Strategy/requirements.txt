@@ -1,0 +1,9 @@
+matplotlib
+numpy
+pandas
+pandas_ta
+PyYAML
+scipy
+tqdm
+ipykernel
+easydict
