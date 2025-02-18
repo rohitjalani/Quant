@@ -1,0 +1,17 @@
+{
+    "Gross profit": 11858.78644608567,
+    "Net profit": 5436.275626096111,
+    "Total closed trades": 223.0,
+    "Win rate": 0.484304932735426,
+    "Max drawdown": 21.827009695396605,
+    "Max runup": 97.35424955028726,
+    "Gross loss": -6280.798207930649,
+    "Average winning trade": 109.18527839974051,
+    "Average losing trade": -55.26725600935534,
+    "Buy and hold return of BTC": 211.22536710960122,
+    "Largest winning trade": 1656.5596519692494,
+    "Largest losing trade": -504.18257259246366,
+    "Sharpe ratio": 4.149193011086819,
+    "Sortino ratio": 15.922862378333187,
+    "Average holding duration": "4 days 08:42:22.600896861"
+}
