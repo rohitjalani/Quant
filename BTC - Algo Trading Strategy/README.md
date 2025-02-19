@@ -1,13 +1,7 @@
-
-# Team 13 - Zelta Crypto Trading Challenge
-
 <div id="top"></div>
 
 <!-- PROJECT LOGO -->
 <br />
-<div align="center">
-    <img src="./assets/ZeltaLabs.png" alt="Logo">
-</div>
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -318,12 +312,5 @@ This file contains codes of all the strategies used for signal generation namely
 
 ## main.ipynb
 * This notebook contains the results of the backtest on the in-sample and out-sample data.
-<!-- CONTACT -->
-
-## Contact
-
-| Email                        |
-| ---------------------------- |
-| zeltatechmeet12@gmail.com      |
 
 <p align="right">(<a href="#top">back to top</a>)</p>
